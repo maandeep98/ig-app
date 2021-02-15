@@ -1,7 +1,7 @@
 import { AccountService } from "src/app/services/account.service";
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "src/app/common/api.service";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: "app-login-one",
@@ -12,7 +12,7 @@ export class LoginOneComponent implements OnInit {
   constructor(
     private theService: AccountService,
     private apiService: ApiService,
-    private route: ActivatedRoute
+    private route: Router
   ) {}
 
   ngOnInit() {
@@ -20,10 +20,7 @@ export class LoginOneComponent implements OnInit {
   }
 
   login() {
-    console.log(this.route.params);
-    this.route.params.subscribe(response => {
-      console.log(response);
-    });
+    console.log(this.route.url.split("=")[1]);
     // window.location.href = "https://api.instagram.com/oauth/authorize?client_id=256885442544464&redirect_uri=https://localhost:4200/auth/facebook&scope=instagram_basic,pages_show_list"
     // setTimeout(() => {
     //   localStorage.setItem("url", "hfsk");
