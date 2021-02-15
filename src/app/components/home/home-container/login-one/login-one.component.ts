@@ -20,7 +20,10 @@ export class LoginOneComponent implements OnInit {
   }
 
   login() {
-    console.log(this.route.url);
+    console.log(this.route.params);
+    this.route.params.subscribe(response => {
+      console.log(response);
+    });
     // window.location.href = "https://api.instagram.com/oauth/authorize?client_id=256885442544464&redirect_uri=https://localhost:4200/auth/facebook&scope=instagram_basic,pages_show_list"
     // setTimeout(() => {
     //   localStorage.setItem("url", "hfsk");
