@@ -6,6 +6,7 @@ import { environment } from "src/environments/environment";
 @Injectable({
   providedIn: "root"
 })
+
 export class AccountService {
   constructor(private apiService: ApiService) {}
 
@@ -30,4 +31,10 @@ export class AccountService {
       "&scope=user_profile,user_media&response_type=code";
     return result;
   }
+
+  getUserDetails(params, body): Observable<any> {
+    const urlPath = "https://mzxdx714zl.execute-api.us-east-1.amazonaws.com/production/token";
+    return this.apiService.doPostObservableForQuery(urlPath, body, params);
+  }
+
 }
