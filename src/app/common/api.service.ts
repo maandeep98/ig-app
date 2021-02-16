@@ -11,6 +11,7 @@ export class ApiService {
   // accessToken = this.authService.getAccessToken();
   // private idToken: string = "Bearer " + this.accessToken;
   private headers = new HttpHeaders()
+    .set("mode", "no-cors")
     .set("Content-Type", "application/json")
     .set("dataType", "jsonp")
     .set("source", "web");

@@ -25,7 +25,8 @@ export class LoginOneComponent implements OnInit {
     if (this.route.url.includes("code")) {
       const params = {};
       const body = {
-        key: code
+        key: code,
+        redirectUri: "localhost:4200/auth/callback"
       };
       this.accountService.getUserDetails(params, body).subscribe(response => {
         alert(response);
