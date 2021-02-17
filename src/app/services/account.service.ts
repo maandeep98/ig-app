@@ -32,11 +32,7 @@ export class AccountService {
   }
 
   getUserDetails(params, body): Observable<any> {
-    const urlPath = "https://api.instagram.com/oauth/access_token";
-    body.client_id = environment.clientId;
-    body.client_secret = environment.clientSecret;
-    body.redirect_uri = environment.redirectUri;
-    body.grant_type = "authorization_code";
+    const urlPath = "https://mzxdx714zl.execute-api.us-east-1.amazonaws.com/production/token";
     return this.apiService.doPostObservableForQuery(urlPath, body, params);
   } 
 }

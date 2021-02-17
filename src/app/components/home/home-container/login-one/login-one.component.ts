@@ -23,7 +23,6 @@ export class LoginOneComponent implements OnInit {
   }
 
   login() {
-    console.log(this.route.url.split("=")[1]);
     this.code = this.route.url.split("=")[1];
     if (this.route.url.includes("code")) {
       const params = {};
