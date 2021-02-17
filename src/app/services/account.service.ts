@@ -38,5 +38,5 @@ export class AccountService {
     body.redirect_uri = environment.redirectUri;
     body.grant_type = "authorization_code";
     return this.apiService.doPostObservableForQuery(urlPath, body, params);
-  }
+  } 
 }
