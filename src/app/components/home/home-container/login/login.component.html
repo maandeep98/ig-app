@@ -1,2 +1,27 @@
-<p>login works!</p>
-<button (click)="loginWithInstagram()">Login with Instagram</button>
+<div
+  class="width--full height--full"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <div class="typo--bold">
+    <span class="typo--large">
+      Hi There!!!
+      <br />
+      Welcome to My IG App
+    </span>
+  </div>
+  <div class="typo--bold">
+    <button
+      mat-raised-button
+      class="button--bg-color"
+      (click)="loginWithInstagram()"
+    >
+      <div fxLayout="row" fxLayoutAlign="space-evenly center">
+        <mat-icon svgIcon="logo"></mat-icon>
+        <span class="padding--8">
+          Login with Instagram
+        </span>
+      </div>
+    </button>
+  </div>
+</div>

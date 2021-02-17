@@ -9,6 +9,9 @@ import { ActivatedRoute, Router } from "@angular/router";
   styleUrls: ["./login-one.component.scss"]
 })
 export class LoginOneComponent implements OnInit {
+  code = "";
+  userDetails;
+  
   constructor(
     private accountService: AccountService,
     private apiService: ApiService,
@@ -21,19 +24,15 @@ export class LoginOneComponent implements OnInit {
 
   login() {
     console.log(this.route.url.split("=")[1]);
-    const code = this.route.url.split("=")[1];
+    this.code = this.route.url.split("=")[1];
     if (this.route.url.includes("code")) {
       const params = {};
       const body = {
-        key: code
+        key: this.code
       };
       this.accountService.getUserDetails(params, body).subscribe(response => {
-        alert(response); 
+        this.userDetails = response;
       });
     }
-    // window.location.href = "https://api.instagram.com/oauth/authorize?client_id=256885442544464&redirect_uri=https://localhost:4200/auth/facebook&scope=instagram_basic,pages_show_list"
-    // setTimeout(() => {
-    //   localStorage.setItem("url", "hfsk");
-    // }, 3000);
   }
 }

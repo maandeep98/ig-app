@@ -1,1 +1,18 @@
-<p>login-one works!</p>
+<div
+  class="width--full height--full"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+>
+  <div class="typo--bold">
+    <span class="typo--large">
+      Code:
+    </span>
+    {{ code ? code : "No Code Available" }}
+  </div>
+  <div class="typo--bold">
+    <span class="typo--large">
+      User Details:
+    </span>
+    {{ userDetails ? userDetails : "No User Data Available" }}
+  </div>
+</div>
