@@ -25,11 +25,10 @@ export class LoginOneComponent implements OnInit {
     if (this.route.url.includes("code")) {
       const params = {};
       const body = {
-        key: code,
-        redirectUri: "localhost:4200/auth/callback"
+        key: code
       };
       this.accountService.getUserDetails(params, body).subscribe(response => {
-        alert(response);
+        alert(response); 
       });
     }
     // window.location.href = "https://api.instagram.com/oauth/authorize?client_id=256885442544464&redirect_uri=https://localhost:4200/auth/facebook&scope=instagram_basic,pages_show_list"

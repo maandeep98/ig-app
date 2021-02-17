@@ -12,7 +12,7 @@ export class ApiService {
   // private idToken: string = "Bearer " + this.accessToken;
   private headers = new HttpHeaders()
     .set("mode", "no-cors")
-    .set("Content-Type", "application/json")
+    .set("Content-Type", "text/plain")
     .set("dataType", "jsonp")
     .set("source", "web");
   private headerCSV = new HttpHeaders()
