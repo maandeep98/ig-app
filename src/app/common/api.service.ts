@@ -11,13 +11,10 @@ export class ApiService {
   // accessToken = this.authService.getAccessToken();
   // private idToken: string = "Bearer " + this.accessToken;
   private headers = new HttpHeaders()
-    .set("mode", "no-cors")
     .set("Content-Type", "text/plain")
     .set("dataType", "jsonp")
-    .set("source", "web");
   private headerCSV = new HttpHeaders()
     .set("Accept", "text/csv, application/csv, application/json")
-    .set("source", "web");
 
   constructor(private http: HttpClient) {}
   // get
