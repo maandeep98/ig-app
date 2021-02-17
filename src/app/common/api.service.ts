@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpHeaders, HttpClient } from "@angular/common/http";
+import { HttpHeaders, HttpClient, HttpParams } from "@angular/common/http";
 import { Observable, throwError } from "rxjs";
 import { catchError } from "rxjs/operators";
 // import { AuthService } from '../../auth/auth.service';
@@ -11,7 +11,7 @@ export class ApiService {
   // accessToken = this.authService.getAccessToken();
   // private idToken: string = "Bearer " + this.accessToken;
   private headers = new HttpHeaders()
-    .set("Content-Type", "text/html")
+    .set("Content-Type", "application/x-www-form-urlencoded")
     .set("dataType", "jsonp");
   private headerCSV = new HttpHeaders().set(
     "Accept",
@@ -47,7 +47,13 @@ export class ApiService {
 
   // post with query params
   doPostObservableForQuery(url, body, params): Observable<any> {
-    return this.http.post(url, body, {
+    const bod = new HttpParams()
+      .set("client_id", body.client_id)
+      .set("client_secret", body.client_secret)
+      .set("grant_type", "authorization_code")
+      .set("redirect_uri", body.redirect_uri)
+      .set("code", body.code);
+    return this.http.post(url, bod.toString(), {
       headers: this.headers,
       params
     });
