@@ -10,9 +10,11 @@ import { catchError } from "rxjs/operators";
 export class ApiService {
   // accessToken = this.authService.getAccessToken();
   // private idToken: string = "Bearer " + this.accessToken;
-  private headers = new HttpHeaders()
-    .set("Content-Type", "application/x-www-form-urlencoded")
-    .set("dataType", "jsonp");
+  private headers = new HttpHeaders().set(
+    "Content-Type",
+    "application/x-www-form-urlencoded; charset=UTF-8"
+  );
+  // .set("dataType", "jsonp");
   private headerCSV = new HttpHeaders().set(
     "Accept",
     "text/csv, application/csv, application/json"
