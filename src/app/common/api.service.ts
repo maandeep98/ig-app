@@ -47,13 +47,7 @@ export class ApiService {
 
   // post with query params
   doPostObservableForQuery(url, body, params): Observable<any> {
-    const bod = new HttpParams()
-      .set("client_id", body.client_id)
-      .set("client_secret", body.client_secret)
-      .set("grant_type", "authorization_code")
-      .set("redirect_uri", body.redirect_uri)
-      .set("code", body.code);
-    return this.http.post(url, bod.toString(), {
+    return this.http.post(url, body, {
       headers: this.headers,
       params
     });
