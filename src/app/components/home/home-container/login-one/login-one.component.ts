@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 export class LoginOneComponent implements OnInit {
   code = "";
   userDetails;
-  
+
   constructor(
     private accountService: AccountService,
     private apiService: ApiService,
@@ -30,7 +30,7 @@ export class LoginOneComponent implements OnInit {
         key: this.code
       };
       this.accountService.getUserDetails(params, body).subscribe(response => {
-        this.userDetails = response;
+        this.userDetails = JSON.stringify(response);
       });
     }
   }
