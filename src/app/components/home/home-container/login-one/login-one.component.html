@@ -3,12 +3,6 @@
   fxLayout="column"
   fxLayoutAlign="start center"
 >
-  <div class="typo--bold">
-    <span class="typo--large">
-      Code:
-    </span>
-    {{ code ? code : "No Code Available" }}
-  </div>
   <div *ngIf="userDetails.id" class="typo--bold scroll">
     <span class="typo--large">
       User Details:
