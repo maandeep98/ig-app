@@ -33,7 +33,7 @@ export class LoginOneComponent implements OnInit {
         this.userDetails = "No Response";
         if (response.id) {
           localStorage.setItem("userData", JSON.stringify(response));
-          this.userDetails = response;
+          this.userDetails = JSON.parse(response);
         } else {
           this.userDetails = JSON.parse(localStorage.getItem("user"));
         }
