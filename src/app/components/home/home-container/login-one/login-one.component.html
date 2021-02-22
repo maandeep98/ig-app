@@ -9,7 +9,7 @@
     </span>
     {{ code ? code : "No Code Available" }}
   </div>
-  <div class="typo--bold scroll">
+  <div *ngIf="userDetails.id" class="typo--bold scroll">
     <span class="typo--large">
       User Details:
       <br />
@@ -17,5 +17,8 @@
     User Name: {{ userDetails.username }}
     <br />
     Id: {{ userDetails.id }}
+  </div>
+  <div *ngIf="userDetails.error_message" class="typo--bold scroll">
+    <span class="typo--large"> Error: {{ userDetails.error_message }} </span>
   </div>
 </div>
