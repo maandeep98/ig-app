@@ -31,13 +31,9 @@ export class LoginOneComponent implements OnInit {
       };
       this.accountService.getUserDetails(params, body).subscribe(response => {
         this.userDetails = "No Response";
-        if (response.error || response.errorMessage) {
-          console.log(response.error);
-        } else {
-          this.userDetails = response;
-        }
         if (response.id) {
           localStorage.setItem("userData", JSON.stringify(response));
+          this.userDetails = response;
         } else {
           this.userDetails = JSON.parse(localStorage.getItem("user"));
         }
