@@ -31,7 +31,7 @@ export class LoginOneComponent implements OnInit {
       };
       this.accountService.getUserDetails(params, body).subscribe(response => {
         this.userDetails = "No Response";
-        this.userDetails = JSON.parse(response);
+        this.userDetails = response;
         if (response.id) {
           localStorage.setItem("userData", JSON.stringify(response));
         } else {
